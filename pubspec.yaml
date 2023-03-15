@@ -36,6 +36,7 @@ dependencies:
   pin_code_fields: ^7.4.0
   simple_animations: ^4.0.1
   supercharged: ^2.1.1
+  flutter_staggered_animations: ^1.1.1
 
 
 

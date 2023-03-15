@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import '../Constant file/Popular_product_constant_container.dart';
 import '../Constant file/black_container.dart';
@@ -120,7 +121,18 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(height: 10.h),
-              FadeAnimation(delay: 2.5, child: JustForYouContainer()),
+              AnimationLimiter(
+                child: Column(
+                  children: AnimationConfiguration.toStaggeredList(
+                    duration: const Duration(seconds: 2),
+                    childAnimationBuilder: (widget) => SlideAnimation(
+                      horizontalOffset: MediaQuery.of(context).size.height / 2,
+                      child: FadeInAnimation(child: widget),
+                    ),
+                    children: [JustForYouContainer()],
+                  ),
+                ),
+              ),
 
               ///_______________ Popular_product product container _________________
               FadeAnimation(
@@ -159,8 +171,18 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(height: 10.h),
-              FadeAnimation(
-                  delay: 3.5, child: const Popular_product_Container()),
+              AnimationLimiter(
+                child: Column(
+                  children: AnimationConfiguration.toStaggeredList(
+                    duration: const Duration(seconds: 2),
+                    childAnimationBuilder: (widget) => SlideAnimation(
+                      horizontalOffset: MediaQuery.of(context).size.height / 2,
+                      child: FadeInAnimation(child: widget),
+                    ),
+                    children: [Popular_product_Container()],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
