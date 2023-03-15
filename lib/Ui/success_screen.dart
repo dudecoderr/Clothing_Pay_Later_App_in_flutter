@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../String File/text_string.dart';
 import '../animation/fade_animation.dart';
 import 'HomePage.dart';
+import 'bottom_navigation_bar.dart';
 
 class Success_screen extends StatefulWidget {
   const Success_screen({Key? key}) : super(key: key);
@@ -116,7 +117,7 @@ class _Success_screenState extends State<Success_screen> {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+                          MaterialPageRoute(builder: (context) => BottomNavigation()));
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Color(0xFF2a2a2a),

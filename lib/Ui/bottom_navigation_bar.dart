@@ -13,6 +13,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
   int current_index = 0;
   final List<Widget> pages = [
     const HomePage(),
+    SizedBox(),
+    SizedBox(),
+    SizedBox(),
   ];
 
   void OnTapped(int index) {
