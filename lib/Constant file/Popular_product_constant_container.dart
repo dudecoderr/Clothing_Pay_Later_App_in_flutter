@@ -12,7 +12,6 @@ class Popular_product_Container extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: Colors.red.shade100,
       height: 250.h,
       child: ListView(
         scrollDirection: Axis.horizontal,
@@ -107,13 +106,12 @@ class Category extends StatelessWidget {
             Container(
               height: 180.h,
               width: 190.w,
-              decoration: BoxDecoration(
-                color: Colors.white,
+              child: ClipRRect(
                 borderRadius: BorderRadius.circular(12.r),
-              ),
-              child: Image.asset(
-                image_location!,
-                fit: BoxFit.cover,
+                child: Image.asset(
+                  image_location!,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Padding(
